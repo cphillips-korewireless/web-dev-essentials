@@ -7,17 +7,42 @@ body {
     overflow-x: hidden;
     color: #c0dabe;
     background-color: #424242;
-}
-
-p,
-h1,
-h2,
-h3 {
     text-align: center;
-    margin: auto;
+}
+
+/********
+ * Note: you typically shouldn't use block comments like this in CSS. Stick with single line comments.
+ * Below you will notice things like the classes are always appled in top to bottom order. So
+ * sometimes even rearranging css can either cause or resolve issues.
+ *
+*********/
+
+/*.app-title--green {
+    */
+
+/*    color: green;*/
+
+/*}*/
+
+.app-title {
+    margin: 1%;
+    font-family: monospace;
+    /*color: red;*/
 }
 
 
+h1 {
+
+    color: aliceblue;
+
+}
+
+/*h1 {
+    */
+
+/*    color: blue !important;*/
+
+/*}*/
 
 .view-container {
     width: 100%;
@@ -50,10 +75,6 @@ h3 {
 
 .movie-description {
     margin: 10px;
-}
-
-.app-title {
-    margin: 1%;
 }
 
 .movie-list__title {
