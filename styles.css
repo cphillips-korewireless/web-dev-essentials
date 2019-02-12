@@ -12,6 +12,7 @@ body {
 
 /********
  * Note: you typically shouldn't use block comments like this in CSS. Stick with single line comments.
+ * unless you have a specific reason why the comment needs to exist in production.
  * Below you will notice things like the classes are always appled in top to bottom order. So
  * sometimes even rearranging css can either cause or resolve issues.
  *
@@ -31,11 +32,10 @@ body {
 }
 
 
-/*h1 {*/
-
-/*    color: aliceblue;*/
-
-/*}*/
+/*h1 {
+    */
+    /*    color: aliceblue;*/
+    /*}*/
 
 /*h1 {
     */
