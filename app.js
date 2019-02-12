@@ -30,6 +30,13 @@ var exampleRequest = function() {
     xhr.send(null);
 };
 
+/*
+ * A function that loops over the results to create a container node for each result
+ * as well as 2 child nodes for the title and the description.
+ * This is something a framework like angular handles for us with things like *ngFor in the template. 
+ * However it would first be creating these in it's virtual dom and then running change detection to determine 
+ * the most efficient strategy for redrawing the DOM.
+ */
 var mapResults = function(results) {
     console.log(results);
     results.forEach((movie) => {
