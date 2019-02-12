@@ -1,12 +1,14 @@
 console.log("works");
 
+/*** Frameworks like Angular manage DOM interaction for you so you don't have to do things like this.
+ * In fact when using any framework with a vdom you should interact with that exclusively and never
+ * refer directly to document.
+ ***/
 document.addEventListener("DOMContentLoaded", function(event) {
     console.log("DOM fully loaded and parsed");
+    //for (var i = 0; i < 10000000000; i++) {}
     exampleRequest();
 });
-
-for (var i = 0; i < 1000000000; i++) {}
-
 
 var exampleRequest = function() {
     var xhr = new XMLHttpRequest();
