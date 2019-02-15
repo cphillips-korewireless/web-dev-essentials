@@ -17,7 +17,7 @@ var exampleRequest = function() {
     xhr.onload = function(e) {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                mapResults(xhr.response);
+                xhr.response.map(mapResults);
             }
             else {
                 console.error(xhr.statusText);
@@ -37,27 +37,23 @@ var exampleRequest = function() {
  * However it would first be creating these in it's virtual dom and then running change detection to determine 
  * the most efficient strategy for redrawing the DOM.
  */
-var mapResults = function(results) {
-    console.log(results);
-    results.forEach((movie) => {
-        var containerElem = document.querySelector("div.ghibli-container");
-        var movieWrapper = document.createElement("div");
-        var movieTitle = document.createElement("div");
-        var movieDescription = document.createElement("div");
-        movieWrapper.classList.add('movie-wrapper');
-        movieTitle.classList.add('movie-title');
-        movieDescription.classList.add('movie-description');
-        var titleNode = document.createElement("h3");
-        var textNode = document.createTextNode(movie.title);
+var mapResults = function(movie) {
 
-        var listNode = document.createElement("div");
-        var description = document.createTextNode(movie.description);
+    var containerElem = document.querySelector("div.ghibli-container");
+    var movieWrapper = document.createElement("div");
+    var movieTitle = document.createElement("div");
+    var movieDescription = document.createElement("div");
+    movieWrapper.classList.add('movie-wrapper');
+    movieTitle.classList.add('movie-title');
+    movieDescription.classList.add('movie-description');
+    var titleNode = document.createElement("h3");
+    var textNode = document.createTextNode(movie.title);
+    var description = document.createTextNode(movie.description);
 
-        titleNode.appendChild(textNode);
-        movieTitle.appendChild(titleNode);
-        movieWrapper.appendChild(movieTitle);
-        movieDescription.appendChild(description);
-        movieWrapper.appendChild(movieDescription);
-        containerElem.appendChild(movieWrapper);
-    });
+    titleNode.appendChild(textNode);
+    movieTitle.appendChild(titleNode);
+    movieWrapper.appendChild(movieTitle);
+    movieDescription.appendChild(description);
+    movieWrapper.appendChild(movieDescription);
+    containerElem.appendChild(movieWrapper);
 };
